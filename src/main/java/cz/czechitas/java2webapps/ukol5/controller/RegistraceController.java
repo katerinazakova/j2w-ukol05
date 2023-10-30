@@ -1,7 +1,9 @@
 package cz.czechitas.java2webapps.ukol5.controller;
 
 import cz.czechitas.java2webapps.ukol5.entity.RegistraceForm;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +24,7 @@ public class RegistraceController {
     }
 
     @PostMapping("/")
-    public Object formular(@ModelAttribute ("participiant") RegistraceForm form){
+    public Object formular(@Valid @ModelAttribute ("participiant") RegistraceForm form, BindingResult bindingResult) {
         return "formular";
     }
-
 }

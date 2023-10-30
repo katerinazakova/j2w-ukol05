@@ -36,6 +36,8 @@
                 <input id="pohlavi2" type="radio" name="pohlavi" value="CHLAPEC"/>
                 <label for="pohlavi2">chlapec</label>
             </div>
+            [@spring.bind "participiant.pohlavi"/]
+            <div class="error">[@spring.showErrors "<br>"/]</div>
 
             <label for="turnus" class="radek">Turnus:</label>
             [@spring.formSingleSelect path="participiant.turnus" options={
