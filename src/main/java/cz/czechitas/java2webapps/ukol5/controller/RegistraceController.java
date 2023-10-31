@@ -32,7 +32,10 @@ public class RegistraceController {
         int vek = period.getYears();
         if (vek < 9 || vek > 15) {
         bindingResult.rejectValue("datumNarozeni","","Tábor je pouze pro děti od 9 do 15 let včetně.");
+            return "formular";
         }
-        return "formular";
+
+        return new ModelAndView("/rekapitulace");
+
     }
 }
