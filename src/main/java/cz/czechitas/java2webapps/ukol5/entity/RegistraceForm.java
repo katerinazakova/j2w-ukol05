@@ -1,9 +1,6 @@
 package cz.czechitas.java2webapps.ukol5.entity;
 
-import jakarta.validation.constraints.AssertTrue;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,12 +13,12 @@ public class RegistraceForm {
     private String jmeno;
     @NotBlank
     private String prijmeni;
-    @AssertTrue
+    @NotNull
     private Gender pohlavi;
-    @NotBlank
+    @NotNull
     @Past
     private LocalDate datumNarozeni;
-    @AssertTrue
+    @NotBlank
     private String turnus;
     @Email
     private String email;

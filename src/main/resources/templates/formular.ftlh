@@ -38,15 +38,17 @@
             </div>
             [@spring.bind "participiant.pohlavi"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
-
-            <label for="turnus" class="radek">Turnus:</label>
-            [@spring.formSingleSelect path="participiant.turnus" options={
-            "": "Turnus-1: 7.7. - 13.7. 2024",
-            "1": "Turnus-2: 14.7. - 20.7. 2024",
-            "2": "Turnus-3: 28.7. - 3.8. 2024",
-            "3": "Turnus-4: 4.8. - 10.8 2024"
-            } /]
-
+            <div class="turnus">
+                <label for="turnus" class="radek">Turnus:</label>
+                [@spring.formSingleSelect path="participiant.turnus" options={
+                "": "",
+                "1": "Turnus-1: 7.7. - 13.7. 2024",
+                "2": "Turnus-2: 14.7. - 20.7. 2024",
+                "3": "Turnus-3: 28.7. - 3.8. 2024",
+                "4": "Turnus-4: 4.8. - 10.8 2024"
+                } /]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
+            </div>
             <label for="email" class="radek">E-mail (na rodiče):</label>
             [@spring.formInput path="participiant.email" fieldType="email"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
