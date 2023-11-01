@@ -15,15 +15,15 @@
     <form class="formular" method="post" action="/">
 
         <label for="jmeno" class="radek">Jméno:</label>
-        [@spring.formInput path="participiant.jmeno" /]
+        [@spring.formInput path="ucastnik.jmeno" /]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
         <label for="prijmeni" class="radek">Příjmení:</label>
-        [@spring.formInput path="participiant.prijmeni" /]
+        [@spring.formInput path="ucastnik.prijmeni" /]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
         <label for="datumNarozeni" class="radek">Datum narození:</label>
-        [@spring.formInput path="participiant.datumNarozeni" fieldType="date"/]
+        [@spring.formInput path="ucastnik.datumNarozeni" fieldType="date"/]
         <div class="error">[@spring.showErrors "<br>"/]</div>
 
         <div class="radek">Pohlaví:</div>
@@ -36,25 +36,25 @@
                 <input id="pohlavi2" type="radio" name="pohlavi" value="CHLAPEC"/>
                 <label for="pohlavi2">chlapec</label>
             </div>
-            [@spring.bind "participiant.pohlavi"/]
+            [@spring.bind "ucastnik.pohlavi"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
             <div class="turnus">
                 <label for="turnus" class="radek">Turnus:</label>
-                [@spring.formSingleSelect path="participiant.turnus" options={
+                [@spring.formSingleSelect path="ucastnik.turnus" options={
                 "": "",
-                "1": "Turnus-1: 7.7. - 13.7. 2024",
-                "2": "Turnus-2: 14.7. - 20.7. 2024",
-                "3": "Turnus-3: 28.7. - 3.8. 2024",
-                "4": "Turnus-4: 4.8. - 10.8 2024"
+                "1": "Turnus 1: 7. 7. - 13. 7. 2024",
+                "2": "Turnus 2: 14. 7. - 20. 7. 2024",
+                "3": "Turnus 3: 28. 7. - 3. 8. 2024",
+                "4": "Turnus 4: 4. 8. - 10. 8. 2024"
                 } /]
                 <div class="error">[@spring.showErrors "<br>"/]</div>
             </div>
             <label for="email" class="radek">E-mail (na rodiče):</label>
-            [@spring.formInput path="participiant.email" fieldType="email"/]
+            [@spring.formInput path="ucastnik.email" fieldType="email"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
 
-            <label for="telefon" class="radek">Telefon(na rodiče):</label>
-            [@spring.formInput path="participiant.telefon" fieldType="tel"/]
+            <label for="telefon" class="radek">Telefon (na rodiče):</label>
+            [@spring.formInput path="ucastnik.telefon" fieldType="tel"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
 
             <div class="radek">

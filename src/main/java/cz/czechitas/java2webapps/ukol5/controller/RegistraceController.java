@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -20,22 +19,23 @@ import java.time.Period;
 public class RegistraceController {
 
     @GetMapping("/")
-    public ModelAndView formular() {
+    public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView("formular");
-        modelAndView.addObject("participiant", new RegistraceForm());
+        modelAndView.addObject("ucastnik", new RegistraceForm());
         return modelAndView;
     }
 
     @PostMapping("/")
-    public Object formular(@Valid @ModelAttribute ("participiant") RegistraceForm form, BindingResult bindingResult) {
+    public Object formular(@Valid @ModelAttribute("ucastnik") RegistraceForm form, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "formular";
+        }
         Period period = form.getDatumNarozeni().until(LocalDate.now());
         int vek = period.getYears();
         if (vek < 9 || vek > 15) {
-        bindingResult.rejectValue("datumNarozeni","","Tábor je pouze pro děti od 9 do 15 let včetně.");
+            bindingResult.rejectValue("datumNarozeni", null, "Tábor je pouze pro děti od 9 do 15 let.");
             return "formular";
         }
-
         return new ModelAndView("/rekapitulace");
-
     }
 }
