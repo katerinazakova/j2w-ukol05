@@ -3,17 +3,11 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Registrace na letní dětský tábor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="/css/style.css"/>
+    [#include "_common/head.ftlh"]
 </head>
 <body>
-<main>
-    <h1>Rekapitulace objednávky</h1>
     <form class="formular" method="post" action="/">
-
+        <h1>Rekapitulace objednávky</h1>
         <label for="jmeno" class="radek">Jméno:</label>
         <input for="jmeno" name="jmeno" type="text" value="${ucastnik.jmeno}" readonly="readonly"/>
 
@@ -24,10 +18,7 @@
         <input for="datumNarozeni" name="datumNarozeni" type="date" value="${ucastnik.datumNarozeni}"
                readonly="readonly"/>
 
-        <div class="radek">Pohlaví:</div>
-        <span class="skupina">
-             <label>${ucastnik.pohlavi}</label>
-        </span>
+        <div>Pohlaví:<label class="radek">${ucastnik.pohlavi}</label></div>
 
         <div class="turnus">Zvolený turnus:
             [#if ucastnik.turnus == "1"]
@@ -49,6 +40,5 @@
         <label for="telefon" class="radek">Telefon (na rodiče):</label>
         <input for="telefon" name="telefon" type="text" value="${ucastnik.telefon}" readonly="readonly"/>
     </form>
-</main>
 </body>
 </html>

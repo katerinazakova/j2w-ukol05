@@ -19,10 +19,30 @@ body {
     align-items: center;
 }
 
-main {
-    max-width: 60rem;
-    min-width: 40rem;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
+.formular {
+    display: flex;
+    width: 500px;
+    padding: 5%;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px darkgray;
+}
+.form-group{
+    display: flex;
+    margin-bottom: 10px;
+}
+.radek {
+    margin-right: 10px;
+    font-weight: 700;
+    flex: 1;
+}
+.input {
+    padding: 5px;
+    border-radius: 5px;
+    flex:2;
+}
+.error {
+    color: red;
 }
