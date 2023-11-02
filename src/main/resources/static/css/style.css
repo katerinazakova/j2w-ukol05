@@ -20,29 +20,38 @@ body {
 }
 
 .formular {
+    font-weight: bold;
     display: flex;
+    flex-direction: column;
     width: 500px;
     padding: 5%;
-    flex-direction: column;
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 1px solid #111111;
+    border-radius: 5px;
     background-color: whitesmoke;
     box-shadow: 0 0 10px darkgray;
+    margin: 5% 0 5% 0;
 }
-.form-group{
+.form-group {
     display: flex;
+    flex-direction: row;
     margin-bottom: 10px;
 }
+
 .radek {
-    margin-right: 10px;
-    font-weight: 700;
-    flex: 1;
+    width: 40%;
+    padding: 10px 5px;
 }
-.input {
-    padding: 5px;
-    border-radius: 5px;
-    flex:2;
-}
+
 .error {
     color: red;
+}
+.skupina {
+    font-weight: normal;
+}
+.radek button {
+    padding: 10px;
+    background-color: navy;
+    color: whitesmoke;
+    border-radius: 5px;
+    border-color: whitesmoke;
 }
