@@ -42,6 +42,10 @@
 
     <label for="telefon" class="radek">Telefon (na rodiče):</label>
     <input class="input" for="telefon" name="telefon" type="text" value="${ucastnik.telefon}" readonly="readonly"/>
+
+    <div class="radek">Vybrané upomínkové předměty:</div>
+    <div class="skupina"></div><label>${ucastnik.darky?join(", ")}</label></div>
+
 </form>
 </body>
 </html>
