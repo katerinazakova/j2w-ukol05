@@ -1,10 +1,9 @@
 [#ftl]
 [#import "/spring.ftl" as spring]
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    [#include "_common/head.ftlh"]
-</head>
+[#import "_imports/common.ftlh" as c]
+
+[@c.head title ="Registrace na letní dětský tábor" /]
+
 <body>
 <form class="formular" method="post" action="/">
     <h1>Registrace na letní dětský tábor</h1>
@@ -30,11 +29,11 @@
     <div class="form-group">
         <div class="radek">Pohlaví:</div>
         <div class="skupina">
-                <input id="pohlavi1" type="radio" name="pohlavi" value="DÍVKA"/>
-                <label for="pohlavi1">dívka</label>
+            <input id="pohlavi1" type="radio" name="pohlavi" value="DÍVKA"/>
+            <label for="pohlavi1">dívka</label>
 
-                <input id="pohlavi2" type="radio" name="pohlavi" value="CHLAPEC"/>
-                <label for="pohlavi2">chlapec</label>
+            <input id="pohlavi2" type="radio" name="pohlavi" value="CHLAPEC"/>
+            <label for="pohlavi2">chlapec</label>
             [@spring.bind "ucastnik.pohlavi"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
         </div>
@@ -67,25 +66,26 @@
     <div class="form-group">
         <div class="radek">Upomínkové předměty:</div>
         <div class="skupina">
-            <input id="darky.ksiltovka" type="checkbox" name="darky" value="KŠILTOVKA" [#if ucastnik.darky?seq_contains("KŠILTOVKA")]checked[/#if]/>
+            <input id="darky.ksiltovka" type="checkbox" name="darky" value="KŠILTOVKA"
+                   [#if ucastnik.darky?seq_contains("KŠILTOVKA")]checked[/#if]/>
             <label for="darky.ksiltovka">kšiltovka</label>
 
-            <input id="darky.batoh" type="checkbox" name="darky" value="BAŤOH" [#if ucastnik.darky?seq_contains("BAŤOH")]checked[/#if]/>
+            <input id="darky.batoh" type="checkbox" name="darky" value="BAŤOH"
+                   [#if ucastnik.darky?seq_contains("BAŤOH")]checked[/#if]/>
             <label for="darky.batoh">baťoh</label>
 
-            <input id="darky.tricko" type="checkbox" name="darky" value="TRIČKO" [#if ucastnik.darky?seq_contains("TRIČKO")]checked[/#if]/>
+            <input id="darky.tricko" type="checkbox" name="darky" value="TRIČKO"
+                   [#if ucastnik.darky?seq_contains("TRIČKO")]checked[/#if]/>
             <label for="darky.tricko">tričko</label>
 
-            <input id="darky.satek" type="checkbox" name="darek" value="ŠÁTEK" [#if ucastnik.darky?seq_contains("ŠÁTEK")]checked[/#if]/>
+            <input id="darky.satek" type="checkbox" name="darek" value="ŠÁTEK"
+                   [#if ucastnik.darky?seq_contains("ŠÁTEK")]checked[/#if]/>
             <label for="darky.satek">šátek</label>
 
             [@spring.bind "ucastnik.darky"/]
             <div class="error">[@spring.showErrors "<br>"/]</div>
         </div>
     </div>
-
-
-
 
     <div class="form-group">
         <div class="radek">
@@ -94,4 +94,4 @@
     </div>
 </form>
 </body>
-</html>
+

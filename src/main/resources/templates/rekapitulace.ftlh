@@ -1,10 +1,8 @@
 [#ftl]
 [#import "/spring.ftl" as spring]
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    [#include "_common/head.ftlh"]
-</head>
+[#import "_imports/common.ftlh" as c]
+[@c.head title ="Registrace na letní dětský tábor" /]
+
 <body>
 <form class="formular" method="post" action="/">
     <h1>Rekapitulace objednávky</h1>
@@ -19,7 +17,7 @@
            readonly="readonly"/>
 
     <div class="radek">Pohlaví:</div>
-    <div class="skupina"></div><label>${ucastnik.pohlavi}</label></div>
+    <div class="skupina"><label>${ucastnik.pohlavi}</label></div>
 
     <div class="radek">Zvolený termín turnusu:
         <div class="skupina">
@@ -44,8 +42,8 @@
     <input class="input" for="telefon" name="telefon" type="text" value="${ucastnik.telefon}" readonly="readonly"/>
 
     <div class="radek">Vybrané upomínkové předměty:</div>
-    <div class="skupina"></div><label>${ucastnik.darky?join(", ")}</label></div>
+    <div class="skupina"><label>${ucastnik.darky?join(", ")}</label></div>
 
 </form>
 </body>
-</html>
+
