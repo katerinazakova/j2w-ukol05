@@ -19,22 +19,22 @@ import java.time.Period;
 public class RegistraceController {
     @GetMapping("/")
     public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("/formular");
+        ModelAndView modelAndView = new ModelAndView("formular");
         modelAndView.addObject("ucastnik", new RegistraceForm());
         return modelAndView;
     }
 
     @PostMapping("/")
     public Object formular(@Valid @ModelAttribute("ucastnik") RegistraceForm form, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "formular";
+        }
         Period period = form.getDatumNarozeni().until(LocalDate.now());
         int vek = period.getYears();
-        if (bindingResult.hasErrors()) {
-            if (vek < 9 || vek > 15) {
-                bindingResult.rejectValue("datumNarozeni", "DateError", "tábor je pouze pro děti od 9 do 15 let.");
-                return "/formular";
-            }
-            return "/formular";
+        if (vek < 9 || vek > 15) {
+            bindingResult.rejectValue("datumNarozeni", "DateError", "tábor je pouze pro děti od 9 do 15 let.");
+            return "formular";
         }
-        return "/rekapitulace";
+        return "rekapitulace";
     }
 }

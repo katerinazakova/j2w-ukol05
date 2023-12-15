@@ -15,10 +15,10 @@
     <label for="datumNarozeni" class="radek">Datum narození:</label>
     <input for="datumNarozeni" name="datumNarozeni" type="date" value="${ucastnik.datumNarozeni}"
            readonly="readonly"/>
-
-    <div class="radek">Pohlaví:</div>
-    <div class="skupina"><label>${ucastnik.pohlavi}</label></div>
-
+    <div class="form-group">
+        <div class="radek">Pohlaví:</div>
+        <div class="skupina"><label>${ucastnik.pohlavi}</label></div>
+    </div>
     <div class="radek">Zvolený termín turnusu:
         <div class="skupina">
             [#if ucastnik.turnus == "1"]
@@ -41,8 +41,10 @@
     <label for="telefon" class="radek">Telefon (na rodiče):</label>
     <input class="input" for="telefon" name="telefon" type="text" value="${ucastnik.telefon}" readonly="readonly"/>
 
-    <div class="radek">Vybrané upomínkové předměty:</div>
-    <div class="skupina"><label>${ucastnik.darky?join(", ")}</label></div>
+    <div class="form-group">
+        <div class="radek">Vybrané upomínkové předměty:</div>
+        <div class="skupina"><label>${ucastnik.darky?join(", ")}</label></div>
+    </div>
 
 </form>
 </body>
