@@ -7,13 +7,13 @@
 <form class="formular" method="post" action="/">
     <h1>Rekapitulace objednávky</h1>
     <label for="jmeno" class="radek">Jméno:</label>
-    <input for="jmeno" name="jmeno" type="text" value="${ucastnik.jmeno}" readonly="readonly"/>
+    <input id="jmeno" name="jmeno" type="text" value="${ucastnik.jmeno}" readonly="readonly"/>
 
     <label for="prijmeni" class="radek">Příjmení:</label>
-    <input for="prijmeni" name="prijmeni" type="text" value="${ucastnik.prijmeni}" readonly="readonly"/>
+    <input id="prijmeni" name="prijmeni" type="text" value="${ucastnik.prijmeni}" readonly="readonly"/>
 
     <label for="datumNarozeni" class="radek">Datum narození:</label>
-    <input for="datumNarozeni" name="datumNarozeni" type="date" value="${ucastnik.datumNarozeni}"
+    <input id="datumNarozeni" name="datumNarozeni" type="date" value="${ucastnik.datumNarozeni}"
            readonly="readonly"/>
     <div class="form-group">
         <div class="radek">Pohlaví:</div>
@@ -36,10 +36,10 @@
     </div>
 
     <label for="email" class="radek">E-mail (na rodiče):</label>
-    <input class="input" for="email" name="email" type="email" value="${ucastnik.email}" readonly="readonly"/>
+    <input class="input" id="email" name="email" type="email" value="${ucastnik.email}" readonly="readonly"/>
 
     <label for="telefon" class="radek">Telefon (na rodiče):</label>
-    <input class="input" for="telefon" name="telefon" type="text" value="${ucastnik.telefon}" readonly="readonly"/>
+    <input class="input" id="telefon" name="telefon" type="text" value="${ucastnik.telefon}" readonly="readonly"/>
 
     <div class="form-group">
         <div class="radek">Vybrané upomínkové předměty:</div>

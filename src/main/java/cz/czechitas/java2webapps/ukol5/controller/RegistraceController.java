@@ -25,7 +25,7 @@ public class RegistraceController {
     }
 
     @PostMapping("/")
-    public Object formular(@Valid @ModelAttribute("ucastnik") RegistraceForm form, BindingResult bindingResult) {
+    public String formular(@Valid @ModelAttribute("ucastnik") RegistraceForm form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "formular";
         }
